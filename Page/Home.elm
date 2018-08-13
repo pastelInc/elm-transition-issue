@@ -1,7 +1,7 @@
 module Page.Home exposing (..)
 
 import Html exposing (Attribute, Html, button, div, h1, input, text)
-import Html.Attributes exposing (placeholder, type_)
+import Html.Attributes exposing (placeholder, style, type_)
 import Html.Events exposing (keyCode, on, onBlur)
 import Json.Decode as Json
 import Route exposing (Route)
@@ -40,6 +40,7 @@ view model =
             , placeholder "Please focus and press enter key"
             , onEnter (Navigate Route.Join)
             , onBlur Unfocus
+            , style [ ( "width", "180px" ) ]
             ]
             []
         ]

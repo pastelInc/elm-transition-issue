@@ -11,6 +11,7 @@ type Model
 
 type Msg
     = Back
+    | Crash
 
 
 init : Model
@@ -23,6 +24,9 @@ update msg model =
     case msg of
         Back ->
             ( model, Route.back )
+
+        Crash ->
+            Debug.crash "This msg don't be used, but be executed."
 
 
 view : Model -> Html Msg

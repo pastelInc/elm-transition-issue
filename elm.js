@@ -13937,7 +13937,16 @@ var _user$project$Page_Home$view = function (model) {
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Events$onBlur(_user$project$Page_Home$Unfocus),
-									_1: {ctor: '[]'}
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$style(
+											{
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'width', _1: '180px'},
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
 								}
 							}
 						}
@@ -13951,10 +13960,21 @@ var _user$project$Page_Home$view = function (model) {
 var _user$project$Page_Join$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
-		return {ctor: '_Tuple2', _0: model, _1: _user$project$Route$back};
+		if (_p0.ctor === 'Back') {
+			return {ctor: '_Tuple2', _0: model, _1: _user$project$Route$back};
+		} else {
+			return _elm_lang$core$Native_Utils.crashCase(
+				'Page.Join',
+				{
+					start: {line: 28, column: 5},
+					end: {line: 33, column: 67}
+				},
+				_p0)('This msg don\'t be used, but be executed.');
+		}
 	});
 var _user$project$Page_Join$Loaded = {ctor: 'Loaded'};
 var _user$project$Page_Join$init = _user$project$Page_Join$Loaded;
+var _user$project$Page_Join$Crash = {ctor: 'Crash'};
 var _user$project$Page_Join$Back = {ctor: 'Back'};
 var _user$project$Page_Join$view = function (model) {
 	return A2(
@@ -14099,7 +14119,7 @@ var _user$project$Main$main = A2(
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};
 if (typeof _user$project$Main$main !== 'undefined') {
-    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Route.Route":{"args":[],"tags":{"Home":[],"Join":[]}},"Main.Msg":{"args":[],"tags":{"HomeUpdate":["Page.Home.Msg"],"UrlChange":["Navigation.Location"],"JoinUpdate":["Page.Join.Msg"]}},"Page.Home.Msg":{"args":[],"tags":{"Unfocus":[],"Navigate":["Route.Route"]}},"Page.Join.Msg":{"args":[],"tags":{"Back":[]}}},"aliases":{"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Main.Msg"},"versions":{"elm":"0.18.0"}});
+    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Route.Route":{"args":[],"tags":{"Home":[],"Join":[]}},"Main.Msg":{"args":[],"tags":{"HomeUpdate":["Page.Home.Msg"],"UrlChange":["Navigation.Location"],"JoinUpdate":["Page.Join.Msg"]}},"Page.Home.Msg":{"args":[],"tags":{"Unfocus":[],"Navigate":["Route.Route"]}},"Page.Join.Msg":{"args":[],"tags":{"Crash":[],"Back":[]}}},"aliases":{"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Main.Msg"},"versions":{"elm":"0.18.0"}});
 }
 
 if (typeof define === "function" && define['amd'])
