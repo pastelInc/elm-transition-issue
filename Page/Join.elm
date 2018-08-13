@@ -19,6 +19,10 @@ init =
     Loaded
 
 
+{-| Crash msg is executed instead of Unfocus msg. But Unfocus msg is undefined in this page.
+This is occurred when onBlur and onEnter were triggered in Home page.
+Because case syntax is translate to if (or switch) syntax (Crash msg is translated to default syntax).
+-}
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
