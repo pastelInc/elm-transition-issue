@@ -1,5 +1,9 @@
 # elm-transition-issue
 
+### I was taught
+
+https://github.com/elm/virtual-dom/issues/103
+
 ### Demo
 
 https://pastelinc.github.io/elm-transition-issue/
